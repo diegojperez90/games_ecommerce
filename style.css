@@ -1,0 +1,41 @@
+.header {
+    /* background-color: rgb(85, 171, 252); */
+    background-color: rgba(15, 131, 15, 0.699);
+}
+
+.main {
+    background-color: rgba(245, 245, 245, 0.479);
+}
+
+.imagen-tarjeta {
+    
+    height: 200px;
+    
+}
+
+.img_carrito {
+    width: 50%;
+    height: 50%;
+    border-radius: 40px;
+} 
+
+.img_carrito3 {
+    width: 200px;
+    height: 200px;
+}
+
+.botonCarrito {
+    font-size: 18px;
+}
+
+.foto_producto {
+    width: 80px;
+    height: 50px;
+}
+
+
+
+
+.footer {
+    background-color: rgb(85, 171, 252);
+}
