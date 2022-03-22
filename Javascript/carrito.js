@@ -1,4 +1,8 @@
-const carrito = JSON.parse(localStorage.getItem('carrito_de_compras'));
+function obtenerDatosCarrito() {
+    return JSON.parse(localStorage.getItem('carrito_de_compras'));
+}
+
+const carrito = obtenerDatosCarrito();
 
 const tabla = document.querySelector('.tabla-body')
 
@@ -18,6 +22,21 @@ const agregandoAlCarrito = () => {
         precio.innerText = element.precioLista;
         botonEliminar.innerText = 'Eliminar';
 
+
+        botonEliminar.onclick = () => {
+            for (let i = 0; i < carrito.length; i++) {
+                const item = carrito[i];
+                if (element.idTemp === item.idTemp ) {
+                    carrito.splice(i, 1)
+                } else {
+                    console.log(carrito)
+                }
+                
+                
+            }
+            tabla.removeChild(fila);
+        }
+
         
         producto.appendChild(img)
         fila.appendChild(producto)
@@ -27,6 +46,7 @@ const agregandoAlCarrito = () => {
         fila.appendChild(eliminar)
         tabla.appendChild(fila)
 
+
         img.classList.add('foto_producto', 'm-0');
         botonEliminar.classList.add('btn', 'btn-danger', 'btn-sm')
         fila.classList.add('align-items-center', 'flex-fill')
@@ -35,5 +55,3 @@ const agregandoAlCarrito = () => {
 
 
 agregandoAlCarrito();
-// console.log(agregandoAlCarrito());
-// console.log(carrito)

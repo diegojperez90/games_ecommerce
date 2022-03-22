@@ -26,8 +26,6 @@ const juegos = [producto1, producto2, producto3, producto4, producto5, producto6
 const carritoCompras = [];
 
 
-
-
 const contenedorMain = document.querySelector('.contenedorMain')
 
 const crearTarjetaProductos = () => {
@@ -40,7 +38,6 @@ const crearTarjetaProductos = () => {
         const precio = document.createElement('p');
         const stock = document.createElement('p')
         const boton = document.createElement('button')
-        // const botonAgregar = document.createElement('a');
 
     
         img.src = elem.imagen;
@@ -48,11 +45,14 @@ const crearTarjetaProductos = () => {
         precio.innerText = '$' + elem.precioLista;
         stock.innerText = 'Stock disponible: ' + elem.stock;
         boton.innerText = 'AGREGAR AL CARRITO ';
-        // botonAgregar.innerText = elem.id;
+    
 
         boton.onclick = () => {
-            carritoCompras.push(elem);
-            console.log(carritoCompras);
+            elem.idTemp = new Date().getTime();
+            
+            const nuevoProductos =  {...elem};
+            carritoCompras.push(nuevoProductos);
+    
             localStorage.setItem('carrito_de_compras',JSON.stringify( carritoCompras) );
         }
     
@@ -70,23 +70,9 @@ const crearTarjetaProductos = () => {
         tarjeta.classList.add('card');
         tarjetaBody.classList.add('card-body')
         img.classList.add('card-img-body', 'imagen-tarjeta')
-        boton.classList.add('btn', 'botonCarrito', 'btn-success')
+        boton.classList.add('btn', 'btn-success')
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 crearTarjetaProductos();
