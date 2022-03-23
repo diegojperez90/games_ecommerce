@@ -9,14 +9,44 @@
     <title>Carrito compras</title>
 </head>
 <body>
-    <div class="row m-0">
+    <!-- <header class="header row m-0">
         <div class="col">
-            <div class="container">
+            <div class="container-fluid">
                 <img src="/imagenes/carrito3.jpg" alt="" class="img carrito">
-                <a href="/index.html">Volver al inicio</a>
+                
+                
+                <a href="/index.html">
+                    <img  class="boton-regresar"  src="/imagenes/volverInicio.jpeg" alt="">
+                </a>
+
+                <button class="btn btn-success boton-total">TOTAL
+                    <p class="total">$</p>
+                </button>
+                
+            </div>
+        </div>
+    </header> -->
+
+
+    <div class="container">
+        <div class="row m-0">
+            <div class="col-8">
+                <img src="/imagenes/carrito3.jpg" alt="" class="img carrito mr-2">
+                
+                
+                <a href="/index.html">
+                    <img  class="boton-regresar"  src="/imagenes/volverInicio.jpeg" alt="">
+                </a>
+
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success boton-total m-5">TOTAL
+                    <p class="total">$</p>
+                </button>
             </div>
         </div>
     </div>
+    
     
     
     <div class="row m-0 justify-content-center">
@@ -34,6 +64,11 @@
                     
                 </tbody>
             </table>
+            <br>
+            <div class=" d-flex justify-content-end mr-5">
+                <button class="btn btn-danger btn-lg boton-vaciar">Vaciar</button>
+            </div>
+            
         </div>
     </div>
 

@@ -36,18 +36,20 @@ const crearTarjetaProductos = () => {
         const tarjetaBody = document.createElement('div');
         const nombre = document.createElement('h3');
         const precio = document.createElement('p');
-        const stock = document.createElement('p')
-        const boton = document.createElement('button')
+        const stock = document.createElement('p');
+        const botonAgregar = document.createElement('button');
+        // const total =  document.querySelector('.total');
 
     
         img.src = elem.imagen;
         nombre.innerText = elem.nombre;
         precio.innerText = '$' + elem.precioLista;
         stock.innerText = 'Stock disponible: ' + elem.stock;
-        boton.innerText = 'AGREGAR AL CARRITO ';
+        botonAgregar.innerText = 'AGREGAR AL CARRITO ';
+        // total.innerHTML = 'aaaa'
     
 
-        boton.onclick = () => {
+        botonAgregar.onclick = () => {
             elem.idTemp = new Date().getTime();
             
             const nuevoProductos =  {...elem};
@@ -61,7 +63,7 @@ const crearTarjetaProductos = () => {
         tarjetaBody.appendChild(nombre);
         tarjetaBody.appendChild(precio);
         tarjetaBody.appendChild(stock);
-        tarjetaBody.appendChild(boton);
+        tarjetaBody.appendChild(botonAgregar);
         tarjeta.appendChild(tarjetaBody)
         columna.appendChild(tarjeta);
         contenedorMain.appendChild(columna);
@@ -70,7 +72,7 @@ const crearTarjetaProductos = () => {
         tarjeta.classList.add('card');
         tarjetaBody.classList.add('card-body')
         img.classList.add('card-img-body', 'imagen-tarjeta')
-        boton.classList.add('btn', 'btn-success')
+        botonAgregar.classList.add('btn', 'btn-success')
     })
 }
 
