@@ -26,8 +26,6 @@ const juegos = [producto1, producto2, producto3, producto4, producto5, producto6
 const carritoCompras = [];
 
 
-
-
 const contenedorMain = document.querySelector('.contenedorMain')
 
 const crearTarjetaProductos = () => {
@@ -38,21 +36,25 @@ const crearTarjetaProductos = () => {
         const tarjetaBody = document.createElement('div');
         const nombre = document.createElement('h3');
         const precio = document.createElement('p');
-        const stock = document.createElement('p')
-        const boton = document.createElement('button')
-        // const botonAgregar = document.createElement('a');
+        const stock = document.createElement('p');
+        const botonAgregar = document.createElement('button');
+        // const total =  document.querySelector('.total');
 
     
         img.src = elem.imagen;
         nombre.innerText = elem.nombre;
         precio.innerText = '$' + elem.precioLista;
         stock.innerText = 'Stock disponible: ' + elem.stock;
-        boton.innerText = 'AGREGAR AL CARRITO ';
-        // botonAgregar.innerText = elem.id;
+        botonAgregar.innerText = 'AGREGAR AL CARRITO ';
+        // total.innerHTML = 'aaaa'
+    
 
-        boton.onclick = () => {
-            carritoCompras.push(elem);
-            console.log(carritoCompras);
+        botonAgregar.onclick = () => {
+            elem.idTemp = new Date().getTime();
+            
+            const nuevoProductos =  {...elem};
+            carritoCompras.push(nuevoProductos);
+    
             localStorage.setItem('carrito_de_compras',JSON.stringify( carritoCompras) );
         }
     
@@ -61,7 +63,7 @@ const crearTarjetaProductos = () => {
         tarjetaBody.appendChild(nombre);
         tarjetaBody.appendChild(precio);
         tarjetaBody.appendChild(stock);
-        tarjetaBody.appendChild(boton);
+        tarjetaBody.appendChild(botonAgregar);
         tarjeta.appendChild(tarjetaBody)
         columna.appendChild(tarjeta);
         contenedorMain.appendChild(columna);
@@ -70,23 +72,9 @@ const crearTarjetaProductos = () => {
         tarjeta.classList.add('card');
         tarjetaBody.classList.add('card-body')
         img.classList.add('card-img-body', 'imagen-tarjeta')
-        boton.classList.add('btn', 'botonCarrito', 'btn-success')
+        botonAgregar.classList.add('btn', 'btn-success')
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 crearTarjetaProductos();
