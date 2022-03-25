@@ -39,12 +39,14 @@ const agregandoAlCarrito = () => {
                     carrito.splice(i, 1);
                     localStorage.setItem('carrito_de_compras',JSON.stringify( carrito) );
                     tabla.removeChild(fila);
-                    
+                    calcularTotal()
                     break;
+                    
                 }
                 
             }
             
+        
         }
 
     
@@ -61,6 +63,7 @@ const agregandoAlCarrito = () => {
         botonEliminar.classList.add('btn', 'btn-danger', 'btn-sm')
         fila.classList.add('align-items-center', 'flex-fill')
     });
+    
 }
 
 
@@ -69,22 +72,28 @@ vaciar.onclick = () => {
     carrito = [];
     tabla.innerHTML = '';
     localStorage.removeItem('carrito_de_compras');
+    calcularTotal();
 }
 
 
 
 const calcularTotal = () => {
     let acumulador = 0;
-    for (let i = 0; i < carrito.length; i++) {
-        const item = carrito[i];
-        acumulador += item.precioLista;
+    if (carrito != null) {
+        for (let i = 0; i < carrito.length; i++) {
+            const item = carrito[i];
+            acumulador += item.precioLista;
+        }
+        console.log(acumulador)
+        totalD.innerText = acumulador;
+        
     }
-    console.log(acumulador)
-    totalD.append(acumulador)
 }
+    
 
-agregandoAlCarrito();
 calcularTotal();
+agregandoAlCarrito();
+
 
 
 
