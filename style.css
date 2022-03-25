@@ -35,6 +35,10 @@ h1 {
     height: 60px;
 }
 
+.strong {
+    font-size: 40px;
+}
+
 .footer {
     background-color: rgba(15, 131, 15, 0.699);
 }

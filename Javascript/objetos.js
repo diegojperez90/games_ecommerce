@@ -6,10 +6,10 @@ class Producto {
         this.precioLista = precioLista,
         this.stock = stock
     }
-    precioIva() {
-        let precioAumento = this.precioLista * 1.21;
-        return precioAumento;
-    }
+    // precioIva() {
+    //     let precioAumento = this.precioLista * 1.21;
+    //     return precioAumento;
+    // }
 }
 
 let producto1 = new Producto(1, './imagenes/maletin.jpg','Maletin de poker', 6000, 10);
@@ -38,7 +38,6 @@ const crearTarjetaProductos = () => {
         const precio = document.createElement('p');
         const stock = document.createElement('p');
         const botonAgregar = document.createElement('button');
-        // const total =  document.querySelector('.total');
 
     
         img.src = elem.imagen;
@@ -46,12 +45,12 @@ const crearTarjetaProductos = () => {
         precio.innerText = '$' + elem.precioLista;
         stock.innerText = 'Stock disponible: ' + elem.stock;
         botonAgregar.innerText = 'AGREGAR AL CARRITO ';
-        // total.innerHTML = 'aaaa'
     
 
         botonAgregar.onclick = () => {
             elem.idTemp = new Date().getTime();
             
+            //Operador SPREAD 
             const nuevoProductos =  {...elem};
             carritoCompras.push(nuevoProductos);
     
