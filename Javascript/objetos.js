@@ -6,20 +6,20 @@ class Producto {
         this.precioLista = precioLista,
         this.stock = stock
     }
-    precioIva() {
-        let precioAumento = this.precioLista * 1.21;
-        return precioAumento;
-    }
+    // precioIva() {
+    //     let precioAumento = this.precioLista * 1.21;
+    //     return precioAumento;
+    // }
 }
 
-let producto1 = new Producto(1, '/imagenes/maletin.jpg','Maletin de poker', 6000, 10);
-let producto2 = new Producto(2, '/imagenes/backgammon.webp','Backgammon', 3000, 5);
-let producto3 = new Producto(3, '/imagenes/ruleta.jpeg','Ruleta', 4500, 20);
-let producto4 = new Producto(4, '/imagenes/ajedrez.jpg','Ajedrez PRO', 7800, 3);
-let producto5 = new Producto(5, '/imagenes/monopoly.jpeg','Monopoly', 4200, 4);
-let producto6 = new Producto(6, '/imagenes/teg.png','Teg', 5500, 5);
-let producto7 = new Producto(7, '/imagenes/carrera-mente.jpeg','Carrera de mente', 14000, 1);
-let producto8 = new Producto(8, '/imagenes/pictionary.webp','Pictionary', 4500, 8);
+let producto1 = new Producto(1, './imagenes/maletin.jpg','Maletin de poker', 6000, 10);
+let producto2 = new Producto(2, './imagenes/backgammon.webp','Backgammon', 3000, 5);
+let producto3 = new Producto(3, './imagenes/ruleta.jpeg','Ruleta', 4500, 20);
+let producto4 = new Producto(4, './imagenes/ajedrez.jpg','Ajedrez PRO', 7800, 3);
+let producto5 = new Producto(5, './imagenes/monopoly.jpeg','Monopoly', 4200, 4);
+let producto6 = new Producto(6, './imagenes/teg.png','Teg', 5500, 5);
+let producto7 = new Producto(7, './imagenes/carrera-mente.jpeg','Carrera de mente', 14000, 1);
+let producto8 = new Producto(8, './imagenes/pictionary.webp','Pictionary', 4500, 8);
 
 const juegos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8];
 
@@ -38,7 +38,6 @@ const crearTarjetaProductos = () => {
         const precio = document.createElement('p');
         const stock = document.createElement('p');
         const botonAgregar = document.createElement('button');
-        // const total =  document.querySelector('.total');
 
     
         img.src = elem.imagen;
@@ -46,12 +45,12 @@ const crearTarjetaProductos = () => {
         precio.innerText = '$' + elem.precioLista;
         stock.innerText = 'Stock disponible: ' + elem.stock;
         botonAgregar.innerText = 'AGREGAR AL CARRITO ';
-        // total.innerHTML = 'aaaa'
     
 
         botonAgregar.onclick = () => {
             elem.idTemp = new Date().getTime();
             
+            //Operador SPREAD 
             const nuevoProductos =  {...elem};
             carritoCompras.push(nuevoProductos);
     
