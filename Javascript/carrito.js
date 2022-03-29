@@ -45,7 +45,12 @@ const agregandoAlCarrito = () => {
                 }
                 
             }
-            
+            //Aplicando libreria SWEET ALERT
+            Swal.fire({
+                icon: 'error',
+                title: 'El producto ' + element.nombre +  ' ha sido eliminado del carrito',
+                width: '500px',
+            })
         
         }
 
@@ -75,7 +80,10 @@ vaciar.onclick = () => {
     calcularTotal();
 }
 
-
+//Aplicando libreria SWEET ALERT
+Swal.fire(
+    'Verifica que tu carrito este cargado correctamente',
+)
 
 const calcularTotal = () => {
     let acumulador = 0;

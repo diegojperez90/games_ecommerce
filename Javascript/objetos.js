@@ -6,10 +6,6 @@ class Producto {
         this.precioLista = precioLista,
         this.stock = stock
     }
-    // precioIva() {
-    //     let precioAumento = this.precioLista * 1.21;
-    //     return precioAumento;
-    // }
 }
 
 let producto1 = new Producto(1, './imagenes/maletin.jpg','Maletin de poker', 6000, 10);
@@ -21,7 +17,8 @@ let producto6 = new Producto(6, './imagenes/teg.png','Teg', 5500, 5);
 let producto7 = new Producto(7, './imagenes/carrera-mente.jpeg','Carrera de mente', 14000, 1);
 let producto8 = new Producto(8, './imagenes/pictionary.webp','Pictionary', 4500, 8);
 
-const juegos = [producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8];
+
+const juegos = [ producto1, producto2, producto3, producto4, producto5, producto6, producto7, producto8];
 
 const carritoCompras = [];
 
@@ -52,11 +49,20 @@ const crearTarjetaProductos = () => {
             
             //Operador SPREAD 
             const nuevoProductos =  {...elem};
+            
             carritoCompras.push(nuevoProductos);
-    
             localStorage.setItem('carrito_de_compras',JSON.stringify( carritoCompras) );
+           //Aplicando libreria TOASTIFY
+            Toastify({
+                text: "Agregaste " + elem.nombre + " al carrito",
+                position: 'center',
+                duration: 4000,
+                style: {
+                    background: 'linear-gradient(to right, #00b09b, #96c92d)'
+                }
+            }).showToast();
         }
-    
+        
         
         tarjeta.appendChild(img)
         tarjetaBody.appendChild(nombre);
