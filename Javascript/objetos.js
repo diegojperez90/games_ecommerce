@@ -71,5 +71,5 @@ const api_path = RUTA_API
 fetch(api_path)
     .then(respuesta => respuesta.json())
     .then (datos => {
-        crearTarjetaProductos(datos.productos)
+        crearTarjetaProductos(datos)
 })
