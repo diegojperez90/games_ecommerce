@@ -29,13 +29,7 @@ const crearTarjetaProductos = (juegos) => {
 
             carritoCompras.push(nuevoProducto);
             localStorage.setItem('carrito_de_compras',JSON.stringify(carritoCompras));
-            // if (elem.stock != 0) {
-            //     elem.stock -= 1;
-            // }
-            
-            // console.log(elem.stock)
 
-        
             Toastify({
                 text: "Agregaste " + elem.nombre + " al carrito",
                 position: 'center',
@@ -71,7 +65,5 @@ fetch('../data/data.json')
         crearTarjetaProductos(datos)
 })
 
-
-actualizandoCarrito();
 
 
