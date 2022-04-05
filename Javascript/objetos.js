@@ -1,3 +1,9 @@
+/**
+ * true si esta subido a pages
+ * false si esta en local
+ */
+const PRODUCTION_MODE = true
+
 const carritoCompras = [];
 
 const contenedorMain = document.querySelector('.contenedorMain')
@@ -58,16 +64,12 @@ const crearTarjetaProductos = (juegos) => {
     })
 }
 
-crearTarjetaProductos([{
-    "id": "1",
-    "imagen": "../imagenes/maletin.jpg",
-    "nombre": "Maletin de poker",
-    "precioLista": "6000",
-    "stock": "10"
-}])
+const api_path = PRODUCTION_MODE 
+    ? 'https://diegojperez90.github.io/games_ecommerce/data/data.json'
+    : '../data/data.json'
 
-// fetch('../data/data.json')
-//     .then(respuesta => respuesta.json())
-//     .then (datos => {
-//         crearTarjetaProductos(datos.productos)
-// })
+fetch(api_path)
+    .then(respuesta => respuesta.json())
+    .then (datos => {
+        crearTarjetaProductos(datos.productos)
+})
