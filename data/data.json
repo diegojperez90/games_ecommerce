@@ -43,7 +43,7 @@
     },
     {
         "id": 7,
-        "imagen": "..arrera de mente",
+        "imagen": "../imagenes/carrera-mente.jpeg",
         "precioLista": 14000,
         "stock": 1
     },
