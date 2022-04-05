@@ -58,8 +58,16 @@ const crearTarjetaProductos = (juegos) => {
     })
 }
 
-fetch('../data/data.json')
-    .then(respuesta => respuesta.json())
-    .then (datos => {
-        crearTarjetaProductos(datos.productos)
-})
+crearTarjetaProductos([{
+    "id": "1",
+    "imagen": "../imagenes/maletin.jpg",
+    "nombre": "Maletin de poker",
+    "precioLista": "6000",
+    "stock": "10"
+}])
+
+// fetch('../data/data.json')
+//     .then(respuesta => respuesta.json())
+//     .then (datos => {
+//         crearTarjetaProductos(datos.productos)
+// })
