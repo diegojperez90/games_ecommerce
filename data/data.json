@@ -2,7 +2,7 @@
     "productos": [
         {
             "id": "1",
-            "imagen": "/imagenes/maletin.jpg",
+            "imagen": "./imagenes/maletin.jpg",
             "nombre": "Maletin de poker",
             "precioLista": "6000",
             "stock": "10"
