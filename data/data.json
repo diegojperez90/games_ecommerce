@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "imagen": "./imagenes/maletin.jpg",
+        "nombre": "Maletin de poker",
+        "precioLista": 6000,
+        "stock": 10
+    },
+    {
+        "id": 2,
+        "imagen": "./imagenes/backgammon.webp",
+        "nombre": "Backgammon",
+        "precioLista": 3000,
+        "stock": 5
+    },
+    {
+        "id": 3,
+        "imagen": "./imagenes/ruleta.jpeg",
+        "nombre": "Ruleta",
+        "precioLista": 4500,
+        "stock": 20
+    },
+    {
+        "id": 4,
+        "imagen": "./imagenes/ajedrez.jpg",
+        "nombre": "Ajedrez PRO",
+        "precioLista": 7800,
+        "stock": 3
+    },
+    {
+        "id": 5,
+        "imagen": "./imagenes/monopoly.jpeg",
+        "nombre": "Monopoly",
+        "precioLista": 4200,
+        "stock": 4
+    },
+    {
+        "id": 6,
+        "imagen": "./imagenes/teg.png",
+        "nombre": "Teg",
+        "precioLista": 5500,
+        "stock": 5
+    },
+    {
+        "id": 7,
+        "imagen": "./imagenes/carrera-mente.jpeg",
+        "nombre": "Carrera de mente",
+        "precioLista": 14000,
+        "stock": 1
+    },
+    {
+        "id": 8,
+        "imagen": "./imagenes/pictionary.webp",
+        "nombre": "Pictionary",
+        "precioLista": 4500,
+        "stock": 8
+    }
+]
