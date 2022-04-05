@@ -2,7 +2,7 @@
  * true si esta subido a pages
  * false si esta en local
  */
-const PRODUCTION_MODE = true
+const RUTA_API = true;
 
 const carritoCompras = [];
 
@@ -64,7 +64,7 @@ const crearTarjetaProductos = (juegos) => {
     })
 }
 
-const api_path = PRODUCTION_MODE 
+const api_path = RUTA_API 
     ? 'https://diegojperez90.github.io/games_ecommerce/data/data.json'
     : '../data/data.json'
 
