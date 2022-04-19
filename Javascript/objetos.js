@@ -1,4 +1,4 @@
-/**
+/*
  * true si esta subido a pages
  * false si esta en local
  */
@@ -18,14 +18,12 @@ const crearTarjetaProductos = (juegos) => {
         const precio = document.createElement('p');
         const stock = document.createElement('p');
         const botonAgregar = document.createElement('button');
-
     
         img.src = elem.imagen;
         nombre.innerText = elem.nombre;
         precio.innerText = '$' + elem.precioLista;
         stock.innerText = 'Stock disponible: ' + elem.stock;
         botonAgregar.innerText = 'AGREGAR AL CARRITO ';
-    
 
         botonAgregar.onclick = () => {
             elem.idTemp = new Date().getTime();
@@ -45,7 +43,6 @@ const crearTarjetaProductos = (juegos) => {
                 }
             }).showToast();
         }
-        
         
         tarjeta.appendChild(img)
         tarjetaBody.appendChild(nombre);

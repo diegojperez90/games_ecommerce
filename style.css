@@ -1,38 +1,24 @@
-.header-inicio {
+header {
     background-color: rgba(15, 131, 15, 0.699);
 }
 
-.main {
+main {
     background-color: rgba(245, 245, 245, 0.479);
 }
 
 h1 {
-    color: white
+    color: white;
+    text-shadow: 3px 3px blue;
+
 }
 
 .imagen-tarjeta {
     height: 200px;
 }
 
-.carrito_header {
-    width: 50%;
-    height: 50%;
-    border-radius: 40px;
-} 
-
-.carrito {
-    width: 200px;
-    height: 200px;
-}
-
 .foto_producto {
     width: 80px;
     height: 50px;
-}
-
-.boton-regresar {
-    width: 120px;
-    height: 60px;
 }
 
 .strong {

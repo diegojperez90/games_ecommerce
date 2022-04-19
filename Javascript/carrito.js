@@ -41,9 +41,7 @@ const agregandoAlCarrito = () => {
                     tabla.removeChild(fila);
                     calcularTotal()
                     break;
-                    
                 }
-                
             }
             //Aplicando libreria SWEET ALERT
             Swal.fire({
@@ -51,10 +49,8 @@ const agregandoAlCarrito = () => {
                 title: 'El producto ' + element.nombre +  ' ha sido eliminado del carrito',
                 width: '500px',
             })
-        
         }
 
-    
         producto.appendChild(img)
         fila.appendChild(producto)
         fila.appendChild(nombre)
@@ -63,15 +59,12 @@ const agregandoAlCarrito = () => {
         fila.appendChild(eliminar)
         tabla.appendChild(fila)
 
-
         img.classList.add('foto_producto', 'm-0');
         botonEliminar.classList.add('btn', 'btn-danger', 'btn-sm')
         fila.classList.add('align-items-center', 'flex-fill')
     });
     
 }
-
-
 
 vaciar.onclick = () => {
     carrito = [];
@@ -94,14 +87,8 @@ const calcularTotal = () => {
         }
         console.log(acumulador)
         totalD.innerText = acumulador;
-        
     }
 }
-    
 
 calcularTotal();
 agregandoAlCarrito();
-
-
-
-
